@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo List</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="top-container">
+            <h3 class="">Task Assignment App</h3>
+            <!-- These change button -->
+            <i class="uil uil-moon change-theme" id="theme-button"></i>
+        </div>
+
+        <form class="form-todo">
+            <input type="text" name="title" class="todo-text" required>
+            <input type="datetime-local" name="date" id="" class="todo-date" required>
+            <select id="items" name="todo-people" class="todo-people" required>
+                <option value="Mustafa">Mustafa</option>
+                <option value="Latif">Latif</option>
+                <option value="Ahmed">Ahmed</option>
+                <option value="Jamal">Jamal</option>
+            </select>
+            <button class="todo-save-btn">Save</button>
+        </form>
+
+        <div class="search">
+            <input type = "text" class="searchBar"  placeholder="Search...">
+        </div>
+        
+        <table id="table_id">
+            <thead class="table-head">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Person</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            
+            <tbody class="items">
+            </tbody>
+
+        </table>
+
+
+        <canvas id="myChart"></canvas>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

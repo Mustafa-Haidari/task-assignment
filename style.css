@@ -1,0 +1,138 @@
+:root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --danger-color: #EE3434;
+    --color-1: #496DDB;
+    --color-2: #BA487D;
+    --color-3: #288040;
+    --color-4: #EE8434;
+    --input-color: #eee;
+    --body-font: 'Raleway', sans-serif;
+    ;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --bg-color: #161927;
+}
+
+button {
+    font-family: inherit;
+    color: #fff;
+    border-radius: .2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.todo-text{
+    background-color:lightgreen;
+    color: darkblue;
+    font-family: inherit;
+    width: 100%;
+}
+.todo-date{
+    background-color:#ffeb3b;
+    color: darkblue;
+    font-family: inherit;
+}
+.todo-people{
+    background-color:#00bcd4;
+    color: white;
+    font-family: inherit;
+}
+.todo-save-btn {
+    background-color: var(--color-1);
+    padding: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.deleteIt {
+    background-color: var(--danger-color);
+    padding: .3rem .5rem;
+
+}
+.edit {
+    background-color: var(--color-4);
+    padding: .3rem .5rem;
+}
+
+.container {
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+#theme-button {
+    font-size: x-large;
+    margin: auto 1rem;
+    cursor: pointer;
+}
+
+.form-todo {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+}
+
+.form-todo input,
+select {
+    margin-right: 1rem;
+    font-size: 1rem;
+    padding: .4rem .6rem;
+    border-radius: 0.2rem;
+    border: none;
+    font-weight: bold;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: inherit;
+}
+
+.table-head {
+    background-color: var(--color-3);
+    color: white;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+td {
+    font-size: .8rem;
+}
+
+tr:nth-child(even) {
+    background-color: #28804052;
+}
+
+.actions{
+    font-size: inherit;
+}
+.search {
+    display: flex;
+}
+.searchBar {
+    margin: 0 auto 1rem auto;
+    font-size: 1rem;
+    background-color: #eee;
+    border-radius: 0.2rem;
+    border: none;
+    padding: 0.5rem 1rem;
+}
