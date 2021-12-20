@@ -7,6 +7,8 @@ let tempObject = {}
 var editing = false;
 var currentId = '';
 const search = document.querySelector(".searchBar")
+var viewLayer = document.querySelector(".view-layer");
+var viewBox = document.querySelector(".view-container");
 
 search.addEventListener('input', (e) => {
     // Declare variables 
@@ -44,10 +46,11 @@ if (localStorage.getItem('todos') === null) {
         var td4 = document.createElement('td')
         var td5 = document.createElement('td')
         td1.innerHTML = alldata[i].id
-        td2.innerHTML = alldata[i].title
+        td2.innerHTML = alldata[i].title.substr(0, 20) + "..."
         td3.innerHTML = alldata[i].date
         td4.innerHTML = alldata[i].person
         td5.innerHTML = `<div class="actions">
+        <button class="view">View</button>
         <button class="edit">Edit</button>
         <button class="deleteIt">Delete</button></div>`
         tr.appendChild(td1)
@@ -75,6 +78,41 @@ document.querySelectorAll(".deleteIt").forEach(item => {
     })
 })
 
+document.querySelectorAll(".view").forEach(item => {
+    item.addEventListener('click', (e) => {
+        var id = e.target.parentElement.parentElement.parentElement.firstChild.innerHTML;
+        var items = JSON.parse(localStorage.getItem("todos"));
+        for (var i = 0; i < items.length; i++) {
+            viewLayer.style.display = "block";
+            viewLayer.style.width = "100%";
+            viewLayer.style.height = "100%";
+            if (items[i].id == id) {
+                viewBox.style.width = "100%";
+                viewBox.style.height = "100%";
+                document.querySelector(".view-id").innerHTML = items[i].id
+                document.querySelector(".view-title").innerHTML = items[i].title
+                document.querySelector(".view-person").innerHTML = items[i].person
+                document.querySelector(".view-date").innerHTML = items[i].date
+                viewBox.style.padding = "0.5rem 1.4rem";
+            }
+        }
+        items = JSON.stringify(items);
+        localStorage.setItem("todos", items);
+        // document.location.reload(true)
+    })
+})
+
+document.querySelector(".close-view").addEventListener('click', () => {
+    viewBox.style.width = "0";
+    viewBox.style.height = "0";
+    viewBox.style.padding = "0";
+    viewLayer.style.width = "0";
+    viewLayer.style.height = "0";
+    document.querySelector(".view-title").innerHTML = ""
+    document.querySelector(".view-person").innerHTML = ""
+    document.querySelector(".view-date").innerHTML = ""
+})
+
 
 document.querySelectorAll(".edit").forEach(item => {
     item.addEventListener('click', (e) => {
@@ -96,7 +134,6 @@ document.querySelectorAll(".edit").forEach(item => {
         }
     })
 })
-
 
 
 formTodo.addEventListener('submit', (e) => {
