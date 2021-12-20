@@ -25,14 +25,27 @@ body {
         margin-bottom: 0;
     }
     body .form-todo {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-column-gap: .1rem;
         margin: 0;
+        display: block;
     }
-    body .form-todo input, select {
-        width: auto;
-        margin: .2rem;
+    body .form-todo input.todo-text {
+        display: block;
+        width: 96%
+    }
+    body .form-todo input.todo-date {
+        width: 63%;
+        margin: .2rem 0.2rem 0.2rem 0;
+        display: inline;
+    }
+    body .form-todo select.todo-people {
+        width: 29.5%;
+        margin: 0.2rem 0 0.2rem 0.2rem;
+        display: inline;
+    }
+    body .todo-save-btn {
+        display: block;
+        width: 32%;
+        margin: 0.2rem auto;
     }
     body .container .search {
         margin-top: 1rem;
