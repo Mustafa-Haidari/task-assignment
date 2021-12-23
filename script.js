@@ -117,7 +117,11 @@ document.querySelectorAll(".deleteIt").forEach(item => {
 
 // display pop up view box with data
 document.querySelectorAll(".view").forEach(item => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', function(e) {
+        if(this.classList.contains("view")){
+            document.querySelector(".table-item-view").style.display = 'block'
+            document.querySelector(".about-app-view").style.display = 'none'
+        }
         var id = e.target.parentElement.parentElement.parentElement.firstChild.innerHTML;
         var items = JSON.parse(localStorage.getItem("todos"));
         for (var i = 0; i < items.length; i++) {
@@ -149,6 +153,21 @@ document.querySelector(".close-view").addEventListener('click', () => {
     document.querySelector(".view-title").innerHTML = ""
     document.querySelector(".view-person").innerHTML = ""
     document.querySelector(".view-date").innerHTML = ""
+})
+
+// about app
+// display pop up view box with information about this app
+document.querySelector(".about-app").addEventListener('click', function(e) {
+    if(this.classList.contains("about-app")){
+        document.querySelector(".table-item-view").style.display = 'none'
+        document.querySelector(".about-app-view").style.display = 'block'
+    }
+    viewLayer.style.display = "block";
+    viewLayer.style.width = "100%";
+    viewLayer.style.height = "100%";
+    viewBox.style.width = "100%";
+    viewBox.style.height = "100%";
+    viewBox.style.padding = "0.5rem 1.4rem";
 })
 
 // edit an item by getting data from localstorage, change it and send string back to localstorage

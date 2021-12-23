@@ -71,12 +71,6 @@ body.dark-theme {
     margin: 2rem auto;
 }
 
-.top-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-}
-
 /* BUTTONS */
 button {
     font-family: inherit;
@@ -85,6 +79,10 @@ button {
     font-weight: bold;
     border: none;
     cursor: pointer;
+}
+.about-app {
+    cursor: pointer;
+    padding: 0.4rem .5rem 0 0;
 }
 .todo-save-btn {
     background-color: var(--color-1);
@@ -113,6 +111,15 @@ button {
 }
 
 /* TOP CONTAINER - FORM AND TEXTFIELDS */
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.top-container-child {
+    display: flex;
+    justify-content: space-between;
+}
 .form-todo {
     display: flex;
     justify-content: space-between;

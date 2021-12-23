@@ -8,10 +8,10 @@
     <!--==================== UNICONS ====================-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Todo List</title>
+    <title>Task Assignment App</title>
 </head>
 
 <body>
@@ -19,9 +19,12 @@
     <div class="container">
         <div class="top-container">
             <h3 class="">Task Assignment App</h3>
-            <p class="about">About</p>
-            <!-- These change button -->
-            <i class="uil uil-moon change-theme" id="theme-button"></i>
+            <div class="top-container-child">
+                <p class="about-app">About</p>
+                <!-- These change button -->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+            </div>
+
         </div>
 
         <form class="form-todo">
@@ -37,19 +40,28 @@
         </form>
 
         <div class="search">
-            <input type = "text" class="searchBar"  placeholder="Search...">
+            <input type="text" class="searchBar" placeholder="Search...">
         </div>
 
         <div class="view-layer">
         </div>
-            <div class="view-container">
-                <button class="close-view">Close</button>
+        <div class="view-container">
+            <div class="table-item-view">
                 <h3>Task Assignment ID: <span class="view-id"></span></h3>
                 <p><strong>Task title: </strong><span class="view-title"></span></p>
                 <p><strong>Assigned to: </strong><span class="view-person"></span></p>
                 <p><strong>Due date: </strong><span class="view-date"></span></p>
             </div>
-        
+            <div class="about-app-view">
+                <h3>Task Assignment App</h3>
+                <p>The task assignment app is created by <a target="_blank" href="https://github.com/Mustafa-Haidari">Mustafa Haidari</a>.
+                    This app uses localStorage as a temporary database to store tasks and allow users to retrieve and manipulate data.
+                </p>
+            </div>
+            <button class="close-view">Close</button>
+            
+        </div>
+
         <table id="table_id">
             <thead class="table-head">
                 <tr>
@@ -60,7 +72,7 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            
+
             <tbody class="items">
             </tbody>
 
@@ -73,4 +85,3 @@
 </body>
 
 </html>
-
